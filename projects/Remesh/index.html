@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AnimeDiffusion</title>
+	<link rel="icon" type="image/x-icon" href="../../static/images/favicon.ico">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+
+	<link rel="stylesheet" href="../../static/vinthony/css/bulma.min.css">
+	<link rel="stylesheet" href="../../static/vinthony/css/bulma-carousel.min.css">
+	<link rel="stylesheet" href="../../static/vinthony/css/bulma-slider.min.css">
+	<link rel="stylesheet" href="../../static/vinthony/css/fontawesome.all.min.css">
+	<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+	<link rel="stylesheet" href="../../static/vinthony/css/index.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+	<script defer src="../../static/vinthony/js/fontawesome.all.min.js"></script>
+	<script src="../../static/vinthony/js/bulma-carousel.min.js"></script>
+	<script src="../../static/vinthony/js/bulma-slider.min.js"></script>
+	<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [['$','$'], ['\\(','\\)']],
+				processEscapes: true
+			}
+		});
+	</script>
+	<script src="../../static/vinthony/js/index.js"></script>
+</head>
+
+<body>
+<section class="hero">
+	<div class="hero-body">
+		<div class="container is-max-desktop">
+			<div class="columns is-centered">
+				<div class="column has-text-centered">
+					<h1 class="xtitle is-1 publication-title">AnimeDiffusion: Anime Diffusion Colorization</h1>
+					<div class="is-size-5 publication-authors">
+						<!-- Paper authors -->
+						<span class="author-block">
+							<a href="#" target="_blank">Taoran Liu</a><sup>1</sup>
+						</span>
+						<span class="author-block">
+							<a href="#" target="_blank">Hongfei Ye</a><sup>1</sup>
+						</span>
+						<span class="author-block">
+							<a href="#" target="_blank">Jianjun Chen</a><sup>1,*</sup> &nbsp;
+						</span>
+						<br>
+
+						<div class="is-size-5 publication-authors">
+							<span class="author-block">
+								<sup>1</sup> School of Aeronautics and Astronautics, Zhejiang University<br>
+                                <sup>1</sup> State Key Lab of CAD&CG, Zhejiang University, Hangzhou, 310027, China<br>
+								<span>E-mail: {taoranliu, hfye, chenjj}@zju.edu.cn</span>
+							<span class="eql-cntrb"><small><br>* Corresponding author</small></span>
+						</div>
+
+						<div class="column has-text-centered">
+							<div class="publication-links">
+								<!-- PDF Link -->
+								<span class="link-block">
+									<a href="#" class="external-link is-disabled" style="pointer-events: none; opacity: 0.6; cursor: not-allowed;">
+										<span class="icon">
+											<i class="fas fa-file-pdf"></i>
+										</span>
+										<span>Paper (Available after publication)</span>
+									</a>
+								</span>
+							
+								<!-- GitHub Link -->
+								<span class="link-block">
+									<a href="#" class="external-link is-disabled" style="pointer-events: none; opacity: 0.6; cursor: not-allowed;">
+										<span class="icon">
+											<i class="fab fa-github"></i>
+										</span>
+										<span>Demo (Available after publication)</span>
+									</a>
+								</span>
+							
+								<!-- Dataset Link -->
+								<span class="link-block">
+									<a href="#" class="external-link is-disabled" style="pointer-events: none; opacity: 0.6; cursor: not-allowed;">
+										<span class="icon">
+											<i class="fab fa-google-drive"></i>
+										</span>
+										<span>Data (Available after publication)</span>
+									</a>
+								</span>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Teaser -->
+<section class="hero teaser">
+	<div class="container is-max-desktop">
+		<div class="hero-body">
+			<img src="https://media.githubusercontent.com/media/xq-meng/xq-meng.github.io/main/projects/AnimeDiffusion/images/teaser.jpg">
+		</div>
+	</div>
+</section>
+<!-- End Teaser -->
+
+<!-- YouTube -->
+<section class="hero is-small is-light">
+	<div class="hero-body">
+		<div class="container">
+			<h2 class="title is-3">Video Presentation</h2>
+			<div class="columns is-centered has-text-centered">
+				<div class="column is-four-fifths">
+					<div class="publication-video">
+						<iframe src="https://www.youtube.com/embed/dtFEEAog4Lc?si=NCOCwk0tHV8t5Nyt" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End YouTube -->
+
+<!-- Abstract -->
+<section class="section hero is-light">
+	<div class="container is-max-desktop">
+		<div class="columns is-centered has-text-centered">
+			<div class="column is-four-fifths">
+				<h2 class="title is-3">Abstract</h2>
+				<div class="content has-text-justified">
+					<p>
+						We propose a fast intersection-free remeshing of
+						triangular meshes that robustly and efficiently generates high-quality non-intersecting meshes. Conducting
+						intersection checks
+						on all local operations during remeshing to prevent intersections
+						represents the principal efficiency bottleneck. Our method is
+						based on a key observation: intersections primarily occur in
+						structurally complex regions. Accordingly, we develop an adaptive method to identify these key regions and
+						perform intersection
+						checks only for local operations within these regions during
+						remeshing, significantly improving the algorithmic efficiency. Our
+						method is an order of magnitude faster than traditional approaches that perform intersection checks on all local
+						operations.
+						Furthermore, we introduce a flip-aware extension mechanism
+						that effectively avoids triangle flipping by constraining the optimization space of local operations, thereby
+						avoiding the formation
+						of irregular sharp edges. We also employ an adaptive iterative
+						size field to eliminate banding phenomenon and propose a quasigeometric size field adjustment method to quickly
+						achieve smooth
+						size transitions, thereby improving mesh quality. Compared to
+						state-of-the-art methods, our method consistently and quickly
+						generates higher quality non-intersecting meshes. In addition,
+						we have validated the robustness and efficiency of our method,
+						using all 5,469 non-intersecting valid models from the Thingi10K
+						dataset.
+					</p>
+				</div>
+				</div>
+				</div>
+	</div>
+</section>
+<!-- End Abstract -->
+
+<!-- Dataset -->
+<!-- <section class="hero teaser">
+	<div class="container is-max-desktop">
+		<h2 class="title is-3">Dataset</h2>
+		<div class="hero-body">
+			<img src="https://media.githubusercontent.com/media/xq-meng/xq-meng.github.io/main/projects/AnimeDiffusion/images/dataset_teaser.jpg">
+		</div>
+	</div>
+</section> -->
+<!-- End Dataset-->
+
+<!-- Framework -->
+<!-- <section class="hero teaser">
+	<div class="container is-max-desktop">
+		<h2 class="title is-3">Pipeline</h2>
+		<div class="hero-body">
+			<img src="https://media.githubusercontent.com/media/xq-meng/xq-meng.github.io/main/projects/AnimeDiffusion/images/framework.jpg">
+		</div>
+	</div>
+</section> -->
+<!-- End Framework -->
+
+<!-- Qualitative -->
+<!-- <section class="hero is-small">
+	<div class="hero-body">
+		<div class="container is-max-desktop">
+			<h2 class="title is-3">Qualitative Evaluation</h2>
+			<div id="results-carousel" class="carousel results-carousel">
+				<div class="item">
+					<h4 class="subtitle has-text-centered">Anime face with homochromatic pupils.</h4>
+        			<img src="https://iostatic.vrtoce.eu.org/anime_diffusion/AnimeDiffusion_Q1.jpg" alt="MY ALT TEXT"/>
+      			</div>
+      			<div class="item">
+					<h4 class="subtitle has-text-centered">Anime face with heterchromatic pupils.</h4>
+        			<img src="https://iostatic.vrtoce.eu.org/anime_diffusion/AnimeDiffusion_Q2.jpg" alt="MY ALT TEXT"/>
+      			</div>
+			</div>
+			<p>
+				Qualitative comparison for anime face with homochromatic and heterchromatic pupils.
+				(a) reference images,
+				(b) line drawings,
+				(c) <a href="https://arxiv.org/abs/2005.05207" target="_blank" class="external-link">Lee et al.</a>,
+				(d) <a href="https://arxiv.org/abs/2207.06095" target="_blank" class="external-link">Li et al.</a>,
+				(e) <a href="https://arxiv.org/abs/2212.10988" target="_blank" class="external-link">Cao et al.</a>,
+				(f) <a href="https://arxiv.org/abs/2305.16223" target="_blank" class="external-link">Xu et al.</a>,
+				and (g) AnimeDiffusion.
+			</p>
+		</div>
+	</div>
+</section> -->
+
+
+<!-- End Qualitative -->
+
+<!--BibTex citation -->
+<!--
+	<section class="section" id="BibTeX">
+		<div class="container is-max-desktop content">
+			<h2 class="title">BibTeX</h2>
+			<pre><code>
+@misc{cao2023animediffusion,
+    title={AnimeDiffusion: Anime Face Line Drawing Colorization via Diffusion Models},
+    author={Yu Cao and Xiangqiao Meng and P. Y. Mok and Tong-Yee Lee and Xueting Liu and Ping Li},
+    year={2023},
+    eprint={2303.11137},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
+			</code></pre>
+		</div>
+</section>
+-->
+<!--End BibTex citation -->
+
+<!-- <footer class="footer">
+	<div class="container">
+		<div class="columns is-centered">
+			<div class="column is-8">
+				<div class="content">
+					<p>
+						This page was built using the <a href="https://github.com/vinthony/project-page-template">modification version</a> of <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> from <a href="https://github.com/vinthony">vinthony</a>.
+						This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+						Commons Attribution-ShareAlike 4.0 International License</a>.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer> -->
+
+</body>
+</html>
