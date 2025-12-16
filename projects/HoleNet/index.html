@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>LG-HoleNet</title>
+	<link rel="icon" type="image/x-icon" href="../../static/images/favicon.ico">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+
+	<link rel="stylesheet" href="../../static/vinthony/css/bulma.min.css">
+	<link rel="stylesheet" href="../../static/vinthony/css/bulma-carousel.min.css">
+	<link rel="stylesheet" href="../../static/vinthony/css/bulma-slider.min.css">
+	<link rel="stylesheet" href="../../static/vinthony/css/fontawesome.all.min.css">
+	<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+	<link rel="stylesheet" href="../../static/vinthony/css/index.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+	<script defer src="../../static/vinthony/js/fontawesome.all.min.js"></script>
+	<script src="../../static/vinthony/js/bulma-carousel.min.js"></script>
+	<script src="../../static/vinthony/js/bulma-slider.min.js"></script>
+	<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [['$','$'], ['\\(','\\)']],
+				processEscapes: true
+			}
+		});
+	</script>
+	<script src="../../static/vinthony/js/index.js"></script>
+</head>
+
+<body>
+<section class="hero">
+	<div class="hero-body">
+		<div class="container is-max-desktop">
+			<div class="columns is-centered">
+				<div class="column has-text-centered">
+					<!-- <h1 class="xtitle is-1 publication-title">*</h1> -->
+					<h1 class="xtitle is-1 publication-title">LG-HoleNet: A Lightweight Graph Neural Network for Through-Hole Recognition via Differential Geometric Attributes</h1>
+					<div class="is-size-5 publication-authors">
+						<!-- Paper authors -->
+						<span class="author-block">
+							Submission ID: paper1064
+						</span>
+						
+						<!-- Original Authors (Commented out for blind submission) -->
+						<!--
+						<span class="author-block">
+							<a href="#" target="_blank">Taoran Liu</a><sup>1,†</sup>
+						</span>
+						<span class="author-block">
+							<a href="#" target="_blank">Jiali Gao</a><sup>2,†</sup>
+						</span>
+						<span class="author-block">
+							<a href="#" target="_blank">Xiaowen Liu</a><sup>1</sup>
+						</span>
+						<span class="author-block">
+							<a href="#" target="_blank">Hengyu Zhou</a><sup>1</sup>
+						</span>
+						<span class="author-block">
+							<a href="#" target="_blank">Hongfei Ye</a><sup>1,*</sup> &nbsp;
+						</span>
+						<span class="author-block">
+							<a href="#" target="_blank">Jianjun Chen</a><sup>1,*</sup> &nbsp;
+						</span>
+						<br>
+
+						<div class="is-size-5 publication-authors">
+							<span class="author-block">
+								<sup>1</sup> School of Aeronautics and Astronautics, Zhejiang University<br>
+								<sup>2</sup> College of Computer Science and Technology, Zhejiang University<br>
+								<sup>1,2</sup> State Key Lab of CAD&CG, Zhejiang University, Hangzhou, 310027, China<br>
+							</span>
+							<span class="eql-cntrb"><small><br><sup>†</sup>Co-first authors<br>* Corresponding author</small></span>
+						</div>
+						-->
+
+						<div class="column has-text-centered">
+							<div class="publication-links">
+								<!-- GitHub Link -->
+								<span class="link-block">
+									<!-- Href set to # and text updated -->
+									<a href="#" class="external-link button">
+										<span class="icon">
+											<i class="fas fa-file-pdf"></i>
+										</span>
+										<span>Available after publication</span>
+									</a>
+								</span>
+							
+								<!-- GitHub Link -->
+								<span class="link-block">
+									<a href="#" class="external-link button">
+										<span class="icon">
+											<i class="fab fa-github"></i>
+										</span>
+										<span>Available after publication</span>
+									</a>
+								</span>
+								
+								<!-- Dataset Link -->
+								<span class="link-block">
+									<a href="#" class="external-link button">
+										<span class="icon">
+											<i class="fab fa-google-drive"></i>
+										</span>
+										<span>Available after publication</span>
+									</a>
+								</span>
+
+
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- Abstract -->
+<section class="section hero is-light">
+	<div class="container is-max-desktop">
+		<div class="columns is-centered has-text-centered">
+			<div class="column is-four-fifths">
+				<h2 class="title is-3">Abstract</h2>
+				<div class="content has-text-justified">
+					<p>
+						Automatic recognition of through-hole features is a critical step in achieving seamless CAD/CAE integration and accelerating engineering analysis pre-processing, such as mesh generation and feature suppression. However, traditional rule-based or hint-based methods struggle to handle complex topological structures. Meanwhile, existing deep learning methods are often limited by the lack of diversity in training data, large model sizes, and a lack of specific optimization for the geometric characteristics of through holes, resulting in limited generalization ability. To address these issues, this paper proposes LG-HoleNet, a lightweight Graph Neural Network framework based on differential geometric attributes, designed for through-hole feature recognition in complex B-Rep models. This method converts the B-Rep model into an attributed graph structure. It innovatively introduces differential geometric quantities, such as Gaussian curvature and mean curvature, as core features. By combining these with engineering semantic attributes like area ratio and loop number, the method constructs a node feature representation that is invariant to rigid transformations. Furthermore, to address the lack of diversity in existing datasets, we constructed and released a large-scale diverse dataset containing 9,273 CAD models. This dataset covers complex base shapes such as spheres and swept bodies, as well as non-standard through-hole features like elliptical cylinders. Experimental results show that LG-HoleNet achieves a recognition accuracy of 99.88% and a recall of 99.89% with only 0.03M parameters. Compared with existing advanced models such as Hierarchical CADNet and AAGNet, our method demonstrates stronger generalization ability in cross-dataset testing. Compared with the commercial software SolidWorks, it offers significant advantages in both speed and accuracy when handling complex and irregular through holes.
+					</p>
+				</div>
+				</div>
+				</div>
+	</div>
+</section>
+<!-- End Abstract -->
+
+
+</body>
+</html>
